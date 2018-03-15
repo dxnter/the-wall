@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>The Wall</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="my-0 mr-md-auto">Coding Dojo Wall</h5>
+    <span id="navbar__welcome-message" class="font-weight-light font-italic">Welcome, Danny!</span>
+    <form action="" method="POST">
+      <a class="btn btn-outline-danger" href="#">Sign Out</a>
+    </form>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="row  justify-content-center">
+      <div class="col-12 col-md-8">
+        <form>
+          <div class="form-group">
+            <label for="Message">Post a message</label>
+            <textarea class="form-control" id="Message" rows="3"></textarea>
+          </div>
+          <button class="btn btn-primary float-right" type="submit">Post</button>
+        </form>
+      </div>
+    </div>
+    <hr/>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 rounded bg-light post__container">
+        <h4 class="post__author-name">Danny Foster</h4>
+        <span class="font-weight-light post__created-at"> • March 3rd, 2018</span>
+        <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
+        <p class="">Use
+          <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
+      </div>
+    </div>
+  </div>
+
+  <!--
+font-weight-light for the dates
+font-weight-bold for the names
+
+-->
+
+</body>
+
+</html>
