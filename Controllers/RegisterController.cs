@@ -18,7 +18,7 @@ namespace the_wall.Controllers {
         }
 
         [HttpPost]
-        [Route("/create")]
+        [Route("create")]
         public IActionResult Create(Register newUser) {
             if (ModelState.IsValid) {
                 string emailExistsQuery = $"SELECT * FROM users WHERE Email = '{newUser.Email}'";
@@ -28,7 +28,10 @@ namespace the_wall.Controllers {
                     return View("Index");
                 }
                 DbConnector.Execute($"INSERT INTO users (FirstName, LastName, Email, Password) VALUES ('{newUser.firstName}', '{newUser.lastName}', '{newUser.Email}', '{newUser.Password}')");
-                int userID = (int) matchedEmails[0]["id"];
+                var fetchNewUserQuery = $"SELECT * FROM users WHERE Email = '{newUser.Email}'";
+                var fetchedNewUser = DbConnector.Query(fetchNewUserQuery);
+                int userID = (int) fetchedNewUser[0]["id"];
+                HttpContext.Session.Clear();
                 HttpContext.Session.SetInt32("userID", userID);
                 return RedirectToAction("Index", "Wall");
             }

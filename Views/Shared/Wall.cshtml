@@ -1,16 +1,17 @@
-﻿  <!-- Navbar -->
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <h5 class="my-0 mr-md-auto">
-      <a class="text-dark" href="/wall">Coding Dojo Wall</a>
-    </h5>
-    <span id="navbar__welcome-message" class="font-weight-light font-italic">Welcome, Danny!</span>
-    <form asp-controller="Home" asp-action="SignOut" method="POST">
-      <input type="submit" class="btn btn-outline-danger" value="Sign Out"></input>
-    </form>
-  </div>
+﻿
+<!-- Navbar -->
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+  <h5 class="my-0 mr-md-auto">
+    <a class="text-dark" href="/wall">Coding Dojo Wall</a>
+  </h5>
+  <span id="navbar__welcome-message" class="font-weight-light font-italic">Welcome, @ViewBag.currentUser[0]["FirstName"]</span>
+  <form asp-controller="Home" asp-action="SignOut" method="POST">
+    <input type="submit" class="btn btn-outline-danger" value="Sign Out"></input>
+  </form>
+</div>
 
-  <!-- Content -->
-  <div class="container">
+<!-- Content -->
+<div class="container">
     <div class="row  justify-content-center">
       <div class="col-12 col-md-8">
         <form method="POST" asp-controller="Home" asp-action="NewMessage">
@@ -22,31 +23,42 @@
         </form>
       </div>
     </div>
-    <hr/>
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 rounded bg-light post__container border">
-        <h4 class="post__author-name">Danny Foster </h4>
-        <span class="font-weight-light post__created-at"> • March 3rd, 2018</span>
-        <p class="lead post__author-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum optio, nisi, aliquid delectus nesciunt iusto
-          natus assumenda nemo, error ab cum? Fugiat similique provident magni doloribus, perspiciatis ea nam alias.</p>
-        <div class="post__comment-list-container">
-          <div class="post__comment-container border">
-            <h4 class="post__author-name">Danny Foster </h4>
-            <span class="font-weight-light post__created-at"> • March 3rd, 2018</span>
-            <p class="lead post__comment-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum optio, nisi, aliquid delectus nesciunt iusto
-              natus assumenda nemo, error ab cum? Fugiat similique provident magni doloribus, perspiciatis ea nam alias.</p>
-          </div>
-        </div>
-        <hr>
-        <div class="post__textarea-container">
-          <form>
-            <div class="form-group">
-              <label for="Message">Post a comment</label>
-              <textarea class="form-control" id="Message" rows="2"></textarea>
+    </hr>
+      @foreach (var message in ViewBag.allMessages)
+      {
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 rounded bg-light post__container border">
+          <h4 class="post__author-name">@message["FirstName"] @message["LastName"] </h4>
+          <span class="font-weight-light post__created-at"> • @message["created_at"]</span>
+          <p class="lead post__author-content">@message["message"]</p>
+          <div class="post__comment-list-container">
+          @foreach (var comment in ViewBag.allComments)
+          {
+            @if (comment["message_id"] == message["id"])
+            {
+            <div class="post__comment-container border">
+              <h4 class="post__author-name">@comment["FirstName"] @comment["LastName"] </h4>
+              <span class="font-weight-light post__created-at"> • @comment["created_at"]</span>
+              <p class="lead post__comment-content">@comment["comment"]</p>
             </div>
-            <button class="btn btn-success float-right" type="submit">Post</button>
-          </form>
+            }
+          }
+          </div>
+      <hr>
+      <div class="post__textarea-container">
+        <form method="POST" asp-controller="Home" asp-action="NewComment">
+          <div class="form-group">
+            <label for="Message">Post a comment</label>
+            <textarea name="Comment" class="form-control" rows="2"></textarea>
+            <input type="hidden" name="id" value="@message["id"]">
+          </div>
+          <button class="btn btn-success float-right" type="submit">Post</button>
+        </form>
         </div>
       </div>
-    </div>
-  </div>
+      </div>
+      }
+
+
+
+</div>

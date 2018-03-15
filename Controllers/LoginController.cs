@@ -27,6 +27,7 @@ namespace the_wall.Controllers {
                 var matchedPassword = DbConnector.Query(comparePasswordQuery);
                 if (matchedPassword.Count > 0) {
                     int userID = (int) matchedPassword[0]["id"];
+                    HttpContext.Session.Clear();
                     HttpContext.Session.SetInt32("userID", userID);
                     return RedirectToAction("Index", "Wall");
                 } else {

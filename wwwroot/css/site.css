@@ -6,7 +6,6 @@ textarea {
   resize: none;
 }
 
-
 .post__author-content {
   font-size: 16px;
   padding-left: 15px;
@@ -14,6 +13,7 @@ textarea {
 
 .post__container {
   padding: 20px;
+  margin: 15px auto;
 }
 
 .post__author-name {

@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 namespace DbConnection {
     public class DbConnector {
         static string server = "localhost";
-        static string db = "theWall"; //Change to your schema name
+        static string db = "theWall2"; //Change to your schema name
         static string port = "3306"; //Potentially 8889
         static string user = "root";
         static string pass = "root";
