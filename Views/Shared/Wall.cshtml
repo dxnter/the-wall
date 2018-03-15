@@ -4,8 +4,8 @@
       <a class="text-dark" href="/wall">Coding Dojo Wall</a>
     </h5>
     <span id="navbar__welcome-message" class="font-weight-light font-italic">Welcome, Danny!</span>
-    <form action="" method="POST">
-      <a class="btn btn-outline-danger" href="#">Sign Out</a>
+    <form asp-controller="Home" asp-action="SignOut" method="POST">
+      <input type="submit" class="btn btn-outline-danger" value="Sign Out"></input>
     </form>
   </div>
 
@@ -13,10 +13,10 @@
   <div class="container">
     <div class="row  justify-content-center">
       <div class="col-12 col-md-8">
-        <form>
+        <form method="POST" asp-controller="Home" asp-action="NewMessage">
           <div class="form-group">
             <label for="Message">Post a message</label>
-            <textarea class="form-control" id="Message" rows="3"></textarea>
+            <textarea name="Message" class="form-control" rows="3"></textarea>
           </div>
           <button class="btn btn-primary float-right" type="submit">Post</button>
         </form>
