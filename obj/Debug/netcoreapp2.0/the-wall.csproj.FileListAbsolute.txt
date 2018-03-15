@@ -1,0 +1,10 @@
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/bin/Debug/netcoreapp2.0/the-wall.deps.json
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/bin/Debug/netcoreapp2.0/the-wall.runtimeconfig.json
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/bin/Debug/netcoreapp2.0/the-wall.runtimeconfig.dev.json
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/bin/Debug/netcoreapp2.0/the-wall.dll
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/bin/Debug/netcoreapp2.0/the-wall.pdb
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/obj/Debug/netcoreapp2.0/the-wall.csproj.CoreCompileInputs.cache
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/obj/Debug/netcoreapp2.0/the-wall.AssemblyInfoInputs.cache
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/obj/Debug/netcoreapp2.0/the-wall.AssemblyInfo.cs
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/obj/Debug/netcoreapp2.0/the-wall.dll
+/Users/danielfoster/Documents/Code/dojo/c#/the-wall/obj/Debug/netcoreapp2.0/the-wall.pdb
