@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using DbConnection;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using the_wall.Models;
 
@@ -27,6 +28,8 @@ namespace the_wall.Controllers {
                     return View("Index");
                 }
                 DbConnector.Execute($"INSERT INTO users (FirstName, LastName, Email, Password) VALUES ('{newUser.firstName}', '{newUser.lastName}', '{newUser.Email}', '{newUser.Password}')");
+                int userID = (int) matchedEmails[0]["id"];
+                HttpContext.Session.SetInt32("userID", userID);
                 return RedirectToAction("Index", "Wall");
             }
             return View("Wall");

@@ -8,7 +8,7 @@ textarea {
 
 
 .post__author-content {
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 15px;
 }
 
@@ -17,12 +17,12 @@ textarea {
 }
 
 .post__author-name {
-  font-size: 18px;
+  font-size: 16px;
   display: inline;
 }
 
 .post__created-at {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .post__comment-container {
@@ -35,7 +35,7 @@ textarea {
 }
 
 .post__comment-content {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 

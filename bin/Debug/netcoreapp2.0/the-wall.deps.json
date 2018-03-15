@@ -24,6 +24,7 @@
       "the-wall/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.5",
+          "Microsoft.AspNetCore.Session": "2.0.1",
           "Microsoft.NETCore.App": "2.0.0",
           "MySql.Data": "6.10.6"
         },
